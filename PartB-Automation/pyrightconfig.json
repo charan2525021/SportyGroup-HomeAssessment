@@ -1,0 +1,23 @@
+{
+  "include": [
+    "api",
+    "controller",
+    "lib",
+    "page",
+    "tests",
+    "utility",
+    "conftest.py"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/.venv"
+  ],
+  "extraPaths": ["."],
+  "pythonVersion": "3.10",
+  "pythonPlatform": "Windows",
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none",
+  "reportMissingTypeStubs": "none"
+}

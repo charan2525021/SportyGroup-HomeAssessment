@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+.venv/
+venv/
+
+
+.pyc
+
+# Pytest / test artifacts
+.pytest_cache/
+.cache/
+htmlcov/
+coverage.xml
+.coverage
+logs/
+
+# Selenium / driver artifacts
+geckodriver.log
+chromedriver.log
+selenium-debug.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
