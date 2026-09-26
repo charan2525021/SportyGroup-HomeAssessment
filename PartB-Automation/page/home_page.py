@@ -35,7 +35,7 @@ class HomePage(BasePage):
         return BetslipContainer(self.driver, root, timeout=self.timeout)
 
     @property
-    def success_modal(self) -> BetReceipt:
+    def betreceipt(self) -> BetReceipt:
         """Bet-placed receipt modal (only present after a placement)."""
         root = self.wait_visible(self.success_model_root)
         return BetReceipt(self.driver, root, timeout=self.timeout)

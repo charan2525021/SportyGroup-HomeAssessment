@@ -33,7 +33,7 @@ class BetslipContainer(BaseControl):
         ".//*[normalize-space(.)='Potential Payout']/following-sibling::*[1]",
     )
 
-    success_modal = (By.CSS_SELECTOR, "#modal-success")
+    betreceipt = (By.CSS_SELECTOR, "#modal-success")
 
     selected_match_team = (By.CSS_SELECTOR, ".betSelectionTeams")
     selected_match_market = (By.CSS_SELECTOR, ".betSelectionMarket")
@@ -104,7 +104,7 @@ class BetslipContainer(BaseControl):
 
         def _resolve(drv):
             try:
-                el = drv.find_element(*self.success_modal)
+                el = drv.find_element(*self.betreceipt)
                 return el if el.is_displayed() else False
             except Exception:
                 return False
