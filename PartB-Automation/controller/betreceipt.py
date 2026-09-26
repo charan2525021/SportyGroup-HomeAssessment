@@ -19,7 +19,7 @@ def _extract_number(text: str) -> float:
     return float(match.group(0))
 
 
-class SuccessModalController(BaseControl):
+class BetReceipt(BaseControl):
     """The 'Bet Placed' receipt modal."""
 
     ROOT_SELECTOR = (By.CSS_SELECTOR, "#modal-success")

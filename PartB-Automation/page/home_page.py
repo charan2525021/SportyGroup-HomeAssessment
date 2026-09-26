@@ -7,7 +7,7 @@ import re
 from selenium.webdriver.common.by import By
 
 from controller.betslip_container import BetslipContainer
-from controller.success_modal_controller import SuccessModalController
+from controller.betreceipt import BetReceipt
 from controller.upcoming_match import UpcomingMatch
 from lib.base_page import BasePage
 
@@ -35,10 +35,10 @@ class HomePage(BasePage):
         return BetslipContainer(self.driver, root, timeout=self.timeout)
 
     @property
-    def success_modal(self) -> SuccessModalController:
+    def success_modal(self) -> BetReceipt:
         """Bet-placed receipt modal (only present after a placement)."""
         root = self.wait_visible(self.success_model_root)
-        return SuccessModalController(self.driver, root, timeout=self.timeout)
+        return BetReceipt(self.driver, root, timeout=self.timeout)
 
     def balance(self) -> float:
         """Current balance shown in the header, as a float."""

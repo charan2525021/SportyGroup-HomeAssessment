@@ -33,7 +33,7 @@ error).
 The architecture separates responsibilities:
 
 - `page.HomePage` receives the Selenium `WebDriver` and finds component roots.
-- Component controllers (`SportsWidget`, `BetslipContainer`, `SuccessModalController`)
+- Component controllers (`SportsWidget`, `BetslipContainer`, `BetReceipt`)
   receive `driver` plus their own root `WebElement` so all searches are scoped.
 - `BetPlacementController` is a workflow controller that receives `HomePage` and
   orchestrates the sports widget, bet slip and success modal.

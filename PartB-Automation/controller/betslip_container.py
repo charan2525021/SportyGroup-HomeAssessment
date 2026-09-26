@@ -7,7 +7,7 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-from controller.success_modal_controller import SuccessModalController
+from controller.betreceipt import BetReceipt
 from lib.base_control import BaseControl
 
 
@@ -97,7 +97,7 @@ class BetslipContainer(BaseControl):
         class_attr = button.get_attribute("class") or ""
         return button.is_enabled() and "placeBetButtonDisabled" not in class_attr
     
-    def place_bet(self) -> SuccessModalController:
+    def place_bet(self) -> BetReceipt:
         """Click Place Bet, wait for the receipt modal, and return it."""
         self.wait_clickable(self.placebet_button).click()
         wait = WebDriverWait(self.driver, self.timeout)
@@ -110,4 +110,4 @@ class BetslipContainer(BaseControl):
                 return False
 
         modal_root = wait.until(_resolve, message="Success modal did not appear")
-        return SuccessModalController(self.driver, modal_root, timeout=self.timeout)
+        return BetReceipt(self.driver, modal_root, timeout=self.timeout)
